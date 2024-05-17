@@ -9,6 +9,9 @@
 #define MOTA 50
 #define PASSAGEIROS 100
 #define MERCADORIAS 20
+#define NOME 50
+#define TELF 15
+#define FILES 20
 #define VEICULOS "veiculos.dat"
 #define FIDELIZADOS "fidelizados.dat"
 
@@ -21,8 +24,8 @@ typedef struct veiculo{
 
 //Estrutura para guardar veiculos fidelizados
 typedef struct fidelizado{
-    char nomeCliente[50];
-    char telefone[15];      
+    char nomeCliente[NOME];
+    char telefone[TELF];      
     char matricula[MAX];
     int classe;
     time_t fimFidelizacao;
@@ -57,8 +60,8 @@ char* converterParaTempoLocal(time_t tempo);
 
 int main(int argc, char *argv[]){
 	
-	char nomeF[20] = VEICULOS;
-    char nomeFidelizados[20] = FIDELIZADOS;
+	char nomeF[FILES] = VEICULOS;
+    char nomeFidelizados[FILES] = FIDELIZADOS;
 	char mP, mB, mD, mClasse;
     int classe, mota, passageiros, mercadorias;
     LUGARES lugares;
@@ -189,7 +192,6 @@ char menuP(void){
 	printf("C - Pesquisa de Veiculo\n");
 	printf("D - Clientes Fidelizados\n");
 	printf("E - Limpar Base de Dados\n");
-    //printf("F - Lugares livres\n");
 	printf("S - Sair\n\n");
     printf("Escolha uma opcao: ");
 	opcaoP = toupper(getch());
@@ -367,7 +369,7 @@ int saidaVeiculo(char nomeF[], char nomeFidelizados[], int mota, int passageiros
 	FILE *f, *t;
     VEICULO veiculo;
     time_t saida;
-    char matricula[MAX], temp[20] = "temp.dat";
+    char matricula[MAX], temp[FILES] = "temp.dat";
     int i, classe, encontrado = 0;
     float valor;
 
@@ -631,7 +633,7 @@ void apagaFidelizacao(char nomeFidelizados[]){
     
 	FILE *f, *t;
     FIDELIZADO fidelizado;
-    char matricula[MAX], tempf[20] = "tempf.dat";
+    char matricula[MAX], tempf[FILES] = "tempf.dat";
     int i, encontrado = 0;
 
     printf("\n\n***** APAGAR FIDELIZACAO *****\n\n");
@@ -819,7 +821,6 @@ int validaRegisto(char matricula[], char nomeF[]){
     FILE *f;
     VEICULO veiculo;
     FIDELIZADO fidelizado;
-    char ficheiro[20];
     int valido = 0;
 
     f = fopen(nomeF, "rb");
@@ -983,7 +984,7 @@ void verificaFidelizacao(char nomeFidelizados[]){
     
 	FILE *f, *t;
     FIDELIZADO fidelizado;
-    char matricula[MAX], tempf[20] = "tempf.dat";
+    char matricula[MAX], tempf[FILES] = "tempf.dat";
 
     f = fopen(nomeFidelizados, "rb");
     //Cria um ficheiro temporario para escever os registos exceto os que se pretendem apagar
