@@ -1,3 +1,5 @@
+🇵🇹 Português | [🇬🇧 English](README.md)
+
 # Gestão de Parque de Estacionamento
 
 Programa em C desenvolvido para a unidade curricular de Programação de Computadores da Licenciatura em Engenharia Eletrotécnica e de Computadores do ISEC. Gere um parque de estacionamento com três tipos de lugares: registo de entradas e saídas pela matrícula, cálculo do valor a pagar por tempo de permanência, gestão de clientes fidelizados com desconto e consulta dos lugares disponíveis.
