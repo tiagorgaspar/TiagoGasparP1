@@ -1,3 +1,5 @@
+[🇵🇹 Português](README.pt.md) | 🇬🇧 English
+
 # Car Park Management System
 
 A C program developed for the Computer Programming course (ISEC). It manages a car park with three vehicle classes: entry and exit registration by licence plate, parking fee calculation based on time spent, loyalty customer management with discounts, and a check of available spaces.
